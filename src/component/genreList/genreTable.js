@@ -10,12 +10,12 @@ const table = ({ genres }) => {
         return <Spinner />
     }
     return (
-        <React.Fragment>
+        <div className="genre_table">
             <GenreTitle />
             <ul className="song_list">
                 <GenreList genres={genres}/>
             </ul>
-      </React.Fragment>
+      </div>
     )
 }
 

@@ -3,7 +3,7 @@ import './trendingList'
 
 const trendingTitle = () => {
     return (
-        <div className='song-header-container'>
+        <div className='song-header-containers'>
                     <div className='song-title-header'>
                         <p>Artist Name</p>
                     </div>

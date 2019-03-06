@@ -2,7 +2,7 @@ import React from 'react';
 import './table.css';
 import List from '../list/list';
 import ListTitle from '../list/listTitle';
-import Spinner from '../spinner/spinner'
+import MusicSpinner from '../spinner/musicloadspinner';
 
 
 const table = (
@@ -15,10 +15,10 @@ const table = (
     }) => {
     
     if(!tracks){
-        return <Spinner />
+        return <MusicSpinner />
     }
     return (
-        <React.Fragment>
+        <div className="top_table">
             <ListTitle />
             <ul className="song_list">
                 <List 
@@ -29,7 +29,7 @@ const table = (
                 songLyrics={songLyrics}
                 />
             </ul>
-      </React.Fragment>
+      </div>
     )
 }
 

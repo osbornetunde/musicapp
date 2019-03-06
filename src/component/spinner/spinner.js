@@ -1,17 +1,18 @@
 import React from 'react';
 import spinning from './spinner.gif';
 import '../lyrics/lyrics';
+import './spinner.css'
 
 
 const spinner = () => {
 
     return (
-        <div className="song-lyric">
+        <div className="spinner">
             <img
             src={spinning}
             alt="Loading..."
-            style={{ width: '200px', margin: '40px auto', display: 'block'}}
             />
+            <p>Please click on the following options on the sidebar</p>
         </div>
     );
 }

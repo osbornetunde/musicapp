@@ -1,8 +1,8 @@
 import React from 'react';
 import './option.css';
 
- const option = ({ clicked, onGetTop, onGetTrending, onGetGenre }) => {
-
+ const option = ({ onGetTop, onGetTrending, onGetGenre, displaySuggestion }) => {
+          console.log(displaySuggestion)
 
   return (
     <div className="option">
@@ -14,6 +14,7 @@ import './option.css';
       </ul>
       <div className="option__suggestion">
           <h4 className="option__suggestion_title">Suggestions</h4>
+            <p></p>
       </div>
     </div>
   )

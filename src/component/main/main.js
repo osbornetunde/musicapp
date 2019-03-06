@@ -3,6 +3,7 @@ import './main.css';
 import Table from '../table/table';
 import TrendingTable from '../trendingList/trendingTable';
 import GenreTable from '../genreList/genreTable';
+import Spinner from '../spinner/spinner';
 
 
 const main = (
@@ -20,7 +21,8 @@ const main = (
         songLyrics
     }) => {
 
-    let display;
+    let display = <Spinner />;
+    
     if (displayTop) {
         display = (
                 <Table 

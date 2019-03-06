@@ -10,12 +10,12 @@ const table = ({ trendings }) => {
         return <Spinner />
     }
     return (
-        <React.Fragment>
+        <div className="trending_table">
             <TrendingTitle />
             <ul className="song_list">
                 <TrendingList trendings={trendings}/>
             </ul>
-      </React.Fragment>
+      </div>
     )
 }
 

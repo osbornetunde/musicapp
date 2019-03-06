@@ -1,10 +1,10 @@
 .song-lyric {
     color: #fff;
     position: absolute;
-    top: 22px;
+    top: 15px;
     text-align: center;
     left: -15rem;
-    background: #000;
+    background: hsla(0, 0%, 0%, 0.3);
     padding: 1rem 4rem;
     margin-left: 12rem;
 }

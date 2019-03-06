@@ -18,7 +18,8 @@ class App extends Component {
     displayTrendingArtist: false,
     displayNewGenre: false,
     showLyrics: false,
-    musicLyrics: ''
+    musicLyrics: '',
+    suggestion: []
     }
 
 
@@ -27,7 +28,8 @@ showLyricsHandler = (e) => {
         console.log(e.target.id)
         if(e.currentTarget.id === e.target.id) {
         this.setState({
-            showLyrics: !this.state.showLyrics
+            showLyrics: !this.state.showLyrics,
+            musicLyrics: ''
         });
     }
 }
@@ -40,7 +42,7 @@ showLyricsHandler = (e) => {
         }
     })
 
-
+    
      this.setState({ 
          
         topSong: response.data.message.body.track_list,
@@ -59,7 +61,7 @@ showLyricsHandler = (e) => {
         }
     })
 
-    console.log(response.data.message.body.artist_list)
+    // console.log(response.data.message.body.artist_list)
      this.setState({ 
         trendingArtist: response.data.message.body.artist_list,
         title: event.target.textContent,
@@ -77,7 +79,7 @@ getNewGenreHandler = async (event) => {
             apikey:`${process.env.REACT_APP_MM_KEY}`
         }
     })
-    const new_genre = response.data.message.body.music_genre_list.slice(0, 9);
+    const new_genre = response.data.message.body.music_genre_list.slice(0, 10);
     // console.log(new_genre[0].music_genre.music_genre_name);
     this.setState({ 
        newGenre: new_genre,
@@ -104,6 +106,14 @@ getLyrics = async (event) => {
     })
 }
 
+
+
+showSuggestion = () => {
+    this.setState({
+        suggestion:  this.state.topSong
+    })
+}
+
     render() {
         
         return (
@@ -113,6 +123,7 @@ getLyrics = async (event) => {
                     onGetTop={this.getTopSongHandler}
                     onGetTrending={this.getTrendingArtistHandler}
                     onGetGenre={this.getNewGenreHandler}
+                    displaySuggestion={this.state.suggestion}
                     />
                     <Main 
                     value={this.state.title}

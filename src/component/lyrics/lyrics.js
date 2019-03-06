@@ -1,6 +1,6 @@
 import React from 'react';
 import './lyrics.css';
-import Spinner from '../spinner/spinner';
+import MusicSpinner from '../spinner/musicloadspinner';
 
 
 
@@ -8,10 +8,11 @@ import Spinner from '../spinner/spinner';
 const Lyrics = ({ songLyrics }) => {
 
     if(!songLyrics){
-        return <Spinner />
+        return <MusicSpinner />
     }
         return (
             <div className="song-lyric">
+            	<h4></h4>
                 <p>{songLyrics}</p>
             </div>
         )

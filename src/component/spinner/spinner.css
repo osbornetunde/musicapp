@@ -1,0 +1,22 @@
+.spinner { 
+		width: 200px; 
+		margin: auto; 
+		display: block; 
+ }
+
+ .spinner p {
+ 	color: #fff;
+ 	font-size: 12px;
+ 	white-space: nowrap;
+ }
+
+ /*================Media Queries===================*/
+
+@media screen and (max-width: 768px){
+	.spinner { 
+		margin: auto 50px;   
+ }
+	 .spinner {
+		text-align: justify;
+	 }
+}
