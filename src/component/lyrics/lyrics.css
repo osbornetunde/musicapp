@@ -9,3 +9,12 @@
     margin-left: 12rem;
 }
 
+/*==============Media Queries============*/
+@media screen and (max-width: 768px) {
+    .song-lyric {
+        /* left: -6rem; */
+        /* padding-left: 6rem; */
+    }
+
+}
+

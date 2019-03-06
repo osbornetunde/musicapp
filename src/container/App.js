@@ -6,6 +6,7 @@ import top from '../apis/top';
 import trending from '../apis/trending';
 import genre from '../apis/genre';
 import lyricsApi from '../apis/lyricsApi';
+import suggestionApi from '../apis/suggestionApi';
 
 
 class App extends Component {
@@ -18,18 +19,24 @@ class App extends Component {
     displayTrendingArtist: false,
     displayNewGenre: false,
     showLyrics: false,
+    showSuggestionLyrics: false,
     musicLyrics: '',
-    suggestion: []
+    suggestion: [],
+    musicTitle: '',
+    musicSuggestionTitle: ''
     }
 
-
+componentDidMount() {
+    this.showSuggestion()
+}
 
 showLyricsHandler = (e) => {
-        console.log(e.target.id)
         if(e.currentTarget.id === e.target.id) {
         this.setState({
             showLyrics: !this.state.showLyrics,
-            musicLyrics: ''
+            musicLyrics: '',
+            musicTitle: e.target.className,
+            showSuggestionLyrics: !this.state.showSuggestionLyrics
         });
     }
 }
@@ -49,7 +56,8 @@ showLyricsHandler = (e) => {
         title: event.target.textContent,
         displayTopSong: !this.state.displayTopSong,
         displayTrendingArtist: false,
-        displayNewGenre: false
+        displayNewGenre: false,
+        showSuggestionLyrics: false
     })
  }
 
@@ -61,13 +69,13 @@ showLyricsHandler = (e) => {
         }
     })
 
-    // console.log(response.data.message.body.artist_list)
      this.setState({ 
         trendingArtist: response.data.message.body.artist_list,
         title: event.target.textContent,
         displayTrendingArtist: !this.state.displayTrendingArtist,
         displayNewGenre: false,
-        displayTopSong: false
+        displayTopSong: false,
+        showSuggestionLyrics: false
 
     })
 }
@@ -80,13 +88,13 @@ getNewGenreHandler = async (event) => {
         }
     })
     const new_genre = response.data.message.body.music_genre_list.slice(0, 10);
-    // console.log(new_genre[0].music_genre.music_genre_name);
     this.setState({ 
        newGenre: new_genre,
        title: event.target.textContent,
        displayNewGenre: !this.state.displayNewGenre,
        displayTopSong: false,
-       displayTrendingArtist: false
+       displayTrendingArtist: false,
+       showSuggestionLyrics: false
 
    })
 }
@@ -100,19 +108,26 @@ getLyrics = async (event) => {
         }
     })
 
-    // console.log(response.data.message.body.lyrics.lyrics_body)
     this.setState({
-        musicLyrics: response.data.message.body.lyrics.lyrics_body
+        musicLyrics: response.data.message.body.lyrics.lyrics_body,
+        showSuggestionLyrics: !this.state.showSuggestionLyrics,
+        musicSuggestionTitle: event.target.className
+    })
+}
+
+showSuggestion = async () => {
+    const response = await suggestionApi.get('/chart.tracks.get', {
+    params: {
+        apikey:`${process.env.REACT_APP_MM_KEY}`
+    }
+})
+    this.setState({
+        suggestion:  response.data.message.body.track_list.sort(() => .5 - Math.random()).slice(0,5)
+
     })
 }
 
 
-
-showSuggestion = () => {
-    this.setState({
-        suggestion:  this.state.topSong
-    })
-}
 
     render() {
         
@@ -124,6 +139,11 @@ showSuggestion = () => {
                     onGetTrending={this.getTrendingArtistHandler}
                     onGetGenre={this.getNewGenreHandler}
                     displaySuggestion={this.state.suggestion}
+                    getMusicLyrics={this.getLyrics}
+                    willShowLyrics={this.state.showSuggestionLyrics}
+                    musicName = {this.state.musicSuggestionTitle}
+                    songLyrics={this.state.musicLyrics}
+                    displayLyrics={this.showLyricsHandler}
                     />
                     <Main 
                     value={this.state.title}
@@ -137,6 +157,7 @@ showSuggestion = () => {
                     willShowLyrics={this.state.showLyrics}
                     getMusicLyrics={this.getLyrics}
                     songLyrics={this.state.musicLyrics}
+                    musicName = {this.state.musicTitle}
                     />
                 </div>
             </React.Fragment>

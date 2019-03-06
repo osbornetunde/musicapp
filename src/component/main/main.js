@@ -18,7 +18,8 @@ const main = (
         displayLyrics, 
         willShowLyrics,
         getMusicLyrics,
-        songLyrics
+        songLyrics,
+        musicName
     }) => {
 
     let display = <Spinner />;
@@ -31,6 +32,7 @@ const main = (
                 willShowLyrics={willShowLyrics}
                 getMusicLyrics={getMusicLyrics}
                 songLyrics={songLyrics}
+                musicName={musicName}
                 />
         )
     }

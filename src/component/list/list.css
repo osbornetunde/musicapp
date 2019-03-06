@@ -4,7 +4,7 @@
     --white: #fff;   
 }
 
-.song-header-container {
+.song-header-container-list {
     display: flex;
     width: 90%;
     border-bottom: 1px solid #666;
@@ -12,24 +12,24 @@
     margin-top: 1.7rem;
   }
 
-.song-title,
-.song-title-header {
-    width: 200px;
+.song-title-list,
+.song-title-header-list {
+    width: 250px;
     margin-left: 2rem;
   }
 
-.song-artist,
-.song-artist-header {
-    width: 100px;
+.song-artist-list,
+.song-artist-header-list {
+    width: 150px;
 }
   
-.song-album,
-.song-album-header {
+.song-album-list,
+.song-album-header-list {
     width: 150px;
 }
 
-.song-lyrics,
-.song-lyrics-header {
+.song-lyrics-list,
+.song-lyrics-header-list {
     flex: 0 1 auto;
     margin-right: 0.5rem;
     position: relative;
@@ -44,7 +44,7 @@
     background-color: #1db954;
 }
   
-.user-song-item {
+.user-song-item-list {
     list-style-type: none;
     border-bottom: 1px solid #666;
     display: flex;
@@ -55,19 +55,19 @@
     width: 90%;
   }
 
-.user-song-item:hover {
+.user-song-item-list:hover {
  background: rgb(51, 51, 51);
 }
 
-.user-song-item p:hover {
+.user-song-item-list p:hover {
     color: #1db954;
 }
 
 
-.song-title p,
-.song-artist p,
-.song-album p,
-.song-lyrics p {
+.song-title-list p,
+.song-artist-list p,
+.song-album-list p,
+.song-lyrics-list p {
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
@@ -79,10 +79,10 @@ color: var(--white);
 
 
 
-.song-title-header p,
-.song-artist-header p,
-.song-album-header p,
-.song-lyrics-header p {
+.song-title-header-list p,
+.song-artist-header-list p,
+.song-album-header-list p,
+.song-lyrics-header-list p {
 text-transform: uppercase;
 font-size: 12px;
 color: #ccc;
@@ -99,23 +99,30 @@ padding: 0 8px;
 
 @media only screen and (max-width: 768px) {
 
-    .song-header-container {
+    .song-header-container-list {
         width: 90%;
     }
 
-    .song-title,
-    .song-title-header {
-        width: 100px;
-        margin-left: 1rem;
+    .song-title-header-list p,
+    .song-artist-header-list p,
+    .song-album-header-list p,
+    .song-lyrics-header-list p {
+        font-size: 9px;
     }
 
-    .song-artist,
-    .song-artist-header {
+    .song-title-list,
+    .song-title-header-list {
+        width: 100px;
+        margin-left: 0;
+    }
+
+    .song-artist-list,
+    .song-artist-header-list {
         width: 50px;
     }
     
-    .song-album,
-    .song-album-header {
+    .song-album-list,
+    .song-album-header-list {
         width: 100px;
     }
 
@@ -123,4 +130,13 @@ padding: 0 8px;
         width: 80px;
         text-overflow: ellipsis;
     }
+
+    .user-song-item-list {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .user-song-item-list {
+        line-height: none;
+      }
 }

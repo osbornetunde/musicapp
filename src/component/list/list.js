@@ -10,32 +10,33 @@ const list = (
         displayLyrics, 
         willShowLyrics, 
         getMusicLyrics,
-        songLyrics
+        songLyrics,
+        musicName
      }) => {
            
         return tracks.map( track => {
-           return  <li className='user-song-item' 
+           return  <li className='user-song-item-list' 
                         key={track.track.track_id} 
                         onClick={displayLyrics} 
                         id={track.track.track_id} >
-                <div className='song-title'>
-                <p  onClick={displayLyrics}>{track.track.track_name}</p>
+                <div className='song-title-list'>
+                <p onClick={displayLyrics}>{track.track.track_name}</p>
                 </div>
     
-                <div className='song-artist'>
+                <div className='song-artist-list'>
                 <p  onClick={displayLyrics}>{track.track.artist_name}</p>
                 </div>
     
-                <div className='song-album'>
+                <div className='song-album-list'>
                 <p  onClick={displayLyrics}>{track.track.album_name}</p>
                 </div>
     
                 <div className='song-lyrics'>
-                <p><button id={track.track.track_id} onClick={getMusicLyrics}>View Lyrics</button></p>
+                <p><button id={track.track.track_id} onClick={getMusicLyrics} className={track.track.track_name}>View Lyrics</button></p>
                 </div>
                 {willShowLyrics ? 
                 <div>
-                    <Lyrics id={track.track.track_id} songLyrics={songLyrics}/>
+                    <Lyrics id={track.track.track_id} songLyrics={songLyrics} musicName={musicName}/>
                 </div> 
                 : null}
             </li>

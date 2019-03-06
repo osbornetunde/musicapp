@@ -62,11 +62,26 @@
     margin-top: 1rem;
 }
 
+.option__suggestion div {
+    font-size: 12px;
+    color: var(--secondary-color);
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+
+.option__suggestion div:hover,
+.option__suggestion div:active{
+    color: #fff;
+    margin-left: 2rem;
+}
+
+
 /*================Media Query=================*/
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
-    /* .option {
-        display: none;
-    } */
+    .option {
+        margin-top: 1rem;
+        justify-content: flex-start;
+    }
 }

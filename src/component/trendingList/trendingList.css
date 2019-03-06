@@ -7,30 +7,30 @@
 .trending_table {
     grid-area: title;
 }
-.song-header-containers {
+.song-header-containers-trend {
     display: flex;
     border-bottom: 1px solid #666;
     padding-bottom: 6px;
     margin-top: 1.7rem;
   }
 
-.song-title,
-.song-title-header {
+.song-title-trend,
+.song-title-header-trend {
     width: 300px;
     margin-left: 2rem;
   }
 
-.song-artist,
-.song-artist-header {
+.song-artist-trend,
+.song-artist-header-trend {
     width: 200px;
 }
   
-.song-album,
-.song-album-header {
+.song-album-trend,
+.song-album-header-trend{
     width: 250px;
 }
   
-.user-song-item {
+.user-song-item-trend {
     list-style-type: none;
     border-bottom: 1px solid #666;
     display: flex;
@@ -40,21 +40,21 @@
     grid-area: list;
   }
 
-.user-song-item:hover {
+.user-song-item-trend:hover {
 background: rgb(51, 51, 51);
 }
 
-.active.user-song-item {
+.active.user-song-item-trend {
 background: rgb(51, 51, 51);
 }
 
-.user-song-item p:hover {
+.user-song-item-trend p:hover {
     color: #1db954;
 }
 
-.song-title p,
-.song-artist p,
-.song-album p {
+.song-title-trend p,
+.song-artist-trend p,
+.song-album-trend p {
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
@@ -66,9 +66,9 @@ color: var(--white);
 
 
 
-.song-title-header p,
-.song-artist-header p,
-.song-album-header p {
+.song-title-header-trend p,
+.song-artist-header-trend p,
+.song-album-header-trend p {
 text-transform: uppercase;
 font-size: 12px;
 color: #ccc;
@@ -81,25 +81,41 @@ padding: 0 8px;
 }
 
 
-@media only screen and (max-width: 768px) {
 
-    .song-header-container {
+/*==================Media Queries==============*/
+
+@media screen and (max-width:768px) {
+
+    .song-header-container-trend {
         width: 90%;
     }
 
-    .song-title,
-    .song-title-header {
+    .song-title-trend,
+    .song-title-header-trend {
         width: 100px;
-        margin-left: 1rem;
+        margin-left: 0;
+  }
+
+    .song-artist-trend,
+    .song-artist-header-trend {
+        width: 50px;
+}
+  
+    .song-album-trend,
+    .song-album-header-trend{
+        width: 50px;
+}
+
+
+    .song-title-header-trend p,
+    .song-artist-header-trend p,
+    .song-album-header-trend p {
+        font-size: 8px;
     }
 
-    .song-artist,
-    .song-artist-header {
-        width: 90px;
-    }
-    
-    .song-album,
-    .song-album-header {
-        width: 100px;
+    .song-title-trend p,
+    .song-artist-trend p,
+    .song-album-trend p{
+        font-size: 10px;
     }
 }

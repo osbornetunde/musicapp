@@ -11,7 +11,8 @@ const table = (
         displayLyrics, 
         willShowLyrics, 
         getMusicLyrics,
-        songLyrics 
+        songLyrics,
+        musicName
     }) => {
     
     if(!tracks){
@@ -27,6 +28,7 @@ const table = (
                 willShowLyrics={willShowLyrics}
                 getMusicLyrics={getMusicLyrics}
                 songLyrics={songLyrics}
+                musicName={musicName}
                 />
             </ul>
       </div>
