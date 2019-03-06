@@ -1,0 +1,11 @@
+.song-lyric {
+    color: #fff;
+    position: absolute;
+    top: 22px;
+    text-align: center;
+    left: -15rem;
+    background: #000;
+    padding: 1rem 4rem;
+    margin-left: 12rem;
+}
+

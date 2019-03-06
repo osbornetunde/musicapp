@@ -1,0 +1,60 @@
+:root {
+    --primary-color: rgba(240, 236, 236, 0.8);
+    --header-color: rgba(240, 236, 236, 0.4);
+    --white: #fff;   
+}
+
+.song-header-container {
+    display: flex;
+    border-bottom: 1px solid #666;
+    padding-bottom: 6px;
+    margin-top: 1.7rem;
+    grid-area: title;
+  }
+
+.song-title,
+.song-title-header {
+    width: 300px;
+    margin-left: 2rem;
+  }
+  
+.user-song-item {
+    list-style-type: none;
+    border-bottom: 1px solid #666;
+    display: flex;
+    line-height: 30px;
+    font-size: 13px;
+    cursor: pointer;
+    grid-area: list;
+  }
+
+.user-song-item:hover {
+background: rgb(51, 51, 51);
+color: #1db954;
+}
+
+.user-song-item p:hover {
+    color: #1db954;
+    }
+    
+
+.song-title p{
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+padding: 0 8px;
+line-height: 25px;
+color: var(--white);
+}
+
+.song-title-header p {
+text-transform: uppercase;
+font-size: 12px;
+color: #ccc;
+padding: 0 8px;
+}
+
+.song_list {
+    margin: 0;
+    padding:0;
+}
