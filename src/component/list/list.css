@@ -112,13 +112,13 @@ padding: 0 8px;
 
     .song-title-list,
     .song-title-header-list {
-        width: 100px;
+        width: 200px;
         margin-left: 0;
     }
 
     .song-artist-list,
     .song-artist-header-list {
-        width: 50px;
+        width: 100px;
     }
     
     .song-album-list,
