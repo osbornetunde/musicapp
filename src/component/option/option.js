@@ -20,7 +20,7 @@ import Lyrics from '../lyrics/lyrics';
     <div className="option">
       <h4 className="option__title">Your Library</h4>
       <ul className="option__list">
-        <li  onClick={onGetTop}>Top Songs</li>
+        <li  onClick={onGetTop}>Top 10 Songs</li>
         <li  onClick={onGetTrending}>Trending Artists</li>
         <li  onClick={onGetGenre}>New Genres</li>
       </ul>
