@@ -36,6 +36,9 @@ const main = (
                 />
         )
     }
+    if(displayTop === false){
+        display= ''
+    }
     if (displayTrending) {
         display = (
                 <TrendingTable trendings={trendings}/>

@@ -17,18 +17,17 @@ const list = (
         return tracks.map( track => {
            return  <li className='user-song-item-list' 
                         key={track.track.track_id} 
-                        onClick={displayLyrics} 
-                        id={track.track.track_id} >
+                        onClick={displayLyrics} >
                 <div className='song-title-list'>
-                <p onClick={displayLyrics}>{track.track.track_name}</p>
+                <p>{track.track.track_name}</p>
                 </div>
     
                 <div className='song-artist-list'>
-                <p  onClick={displayLyrics}>{track.track.artist_name}</p>
+                <p>{track.track.artist_name}</p>
                 </div>
     
                 <div className='song-album-list'>
-                <p  onClick={displayLyrics}>{track.track.album_name}</p>
+                <p >{track.track.album_name}</p>
                 </div>
     
                 <div className='song-lyrics'>

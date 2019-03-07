@@ -31,14 +31,22 @@ componentDidMount() {
 }
 
 showLyricsHandler = (e) => {
-        if(e.currentTarget.id === e.target.id) {
+        console.log(e.target.id)
+        if(e.target.id === '') {
         this.setState({
-            showLyrics: !this.state.showLyrics,
+            showLyrics: false,
+            musicLyrics: '',
+            musicTitle: e.target.className,
+            showSuggestionLyrics: !this.state.showSuggestionLyrics,
+            displayTopSong: false
+        })
+    }
+        this.setState({
+            showLyrics: true,
             musicLyrics: '',
             musicTitle: e.target.className,
             showSuggestionLyrics: !this.state.showSuggestionLyrics
-        });
-    }
+    })
 }
 
  getTopSongHandler = async (event) => {
