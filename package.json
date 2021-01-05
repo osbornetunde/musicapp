@@ -4,7 +4,7 @@
   "homepage": "http://osbornetunde.github.io/musicapp",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv": "^6.2.0",
     "env-cmd": "^8.0.2",
     "react": "^16.8.3",
